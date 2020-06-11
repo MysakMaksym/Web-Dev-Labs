@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+ <div class="container" id="appointmetForm">
+     <div class="card mt-5 mb-5 p-2">
+         <h2>Create</h2>
+         <form onsubmit="return false;">
+             <div class="form-group">
+                 <label>date</label>
+                 <input placeholder="mm-dd-yyyy" class="form-control" id="appointment_date" type="text">
+             </div>
+             <div class="form-group">
+                 <label>time</label>
+                 <input placeholder="hh:mm:ss" class="form-control" id="appointment_time" type="text">
+             </div>
+             <div class="form-group">
+                 <label>description</label>
+                 <input class="form-control" id="appointment_description" type="text">
+             </div>
+             <div class="form-group">
+                 <label>client_id</label>
+                 <input class="form-control" id="client_id" type="text">
+             </div>
+             <div class="form-group">
+                 <label>vet_id</label>
+                 <input class="form-control" id="vet_id" type="text">
+             </div>
+             <button class="btn btn-primary" onclick="create_appointment()">Submit</button>
+
+         </form>
+     </div>
+ </div>
+
+ <div class="container" id="appointmetclientForm">
+     <div class="card mt-5 mb-5 p-2">
+         <h2>List Appointments of client</h2>
+         <form onsubmit="return false;">
+
+             <div class="form-group">
+                 <label> Input client id</label>
+                 <input class="form-control" id="client_id2" type="text">
+             </div>
+             <button class="btn btn-primary" onclick="list_appointment_client()">Ok</button>
+
+         </form>
+     </div>
+ </div>
+ <div class="container" id="appointmetvetForm">
+     <div class="card mt-5 mb-5 p-2">
+         <h2>List Appointments of vet</h2>
+         <form onsubmit="return false;">
+
+             <div class="form-group">
+                 <label>Input vet id</label>
+                 <input class="form-control" id="vet_id2" type="text">
+             </div>
+             <button class="btn btn-primary" onclick="list_appointment_vet()">OK</button>
+         </form>
+     </div>
+ </div>
+             <script src="{% static 'signin.js' %}"></script>
+
+</body>
+</html>
